@@ -1,0 +1,217 @@
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Shield, Cloud, Monitor, Phone, BarChart } from 'lucide-react'
+
+export default function LandingPage() {
+  const securitySteps = [
+    {
+      number: "1",
+      title: "Vulnerability Assessment",
+      description: "Our experts conduct a thorough analysis of your IT infrastructure to identify potential security vulnerabilities."
+    },
+    {
+      number: "2",
+      title: "Threat Mitigation",
+      description: "We develop and implement tailored strategies to fortify your defenses against a wide range of cyber threats."
+    },
+    {
+      number: "3",
+      title: "Ongoing Monitoring",
+      description: "Continuous monitoring and proactive adjustments ensure your cybersecurity measures remain effective."
+    }
+  ]
+
+  const managedServices = [
+    {
+      title: "Proactive Monitoring",
+      description: "Our team of experts constantly monitors your IT infrastructure, quickly addressing any issues that arise."
+    },
+    {
+      title: "Strategic Guidance",
+      description: "Leverage our IT consulting services to align your technology with your business goals and drive innovation."
+    },
+    {
+      title: "Cost Optimization",
+      description: "Our managed services model helps you avoid the overhead of maintaining an in-house IT department."
+    }
+  ]
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="relative h-[600px] flex items-center">
+        <Image
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1_Unleash%20Your%20Business%20Potential%20with%20Our%20IT%20Solutions-L3H3OTuUf4CDljViZW9hUusN6nm8Ld.png"
+          alt="IT professionals collaborating in a modern office environment"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="container relative z-10 mx-auto px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Unleash Your Business Potential with Our IT Solutions
+          </h1>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl">
+            Streamline your operations, secure your data, and drive innovation with our comprehensive suite of IT services.
+          </p>
+          <div className="flex gap-4">
+            <Button size="lg" variant="default">Learn More</Button>
+            <Button size="lg" variant="outline" className="bg-white/10">Get a Quote</Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Security Assessment Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Comprehensive Cybersecurity and Risk Assessment
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {securitySteps.map((step) => (
+              <Card key={step.number} className="relative">
+                <div className="absolute -top-6 left-6 w-12 h-12 bg-primary text-primary-foreground rounded-lg flex items-center justify-center text-2xl font-bold">
+                  {step.number}
+                </div>
+                <CardHeader className="pt-8">
+                  <CardTitle>{step.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{step.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cloud Solutions Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-1">
+              <h2 className="text-3xl font-bold mb-6">
+                Scalable Cloud Solutions for Your Growing Business
+              </h2>
+              <div className="space-y-8">
+                <div className="flex gap-4">
+                  <Cloud className="w-6 h-6 text-primary flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Cloud Migration</h3>
+                    <p className="text-muted-foreground">Our experts guide you through the seamless transition of your IT infrastructure to the cloud.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <BarChart className="w-6 h-6 text-primary flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Flexible Scaling</h3>
+                    <p className="text-muted-foreground">Easily scale your cloud resources up or down to meet the evolving needs of your business.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-1">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/6_Scalable%20Cloud%20Solutions%20for%20Your%20Growing%20Business-wDcY1PVm1TPiLN0QdkDgR2PKotKxAv.png"
+                alt="Illustration of cloud solutions and cloud migration"
+                width={500}
+                height={400}
+                className="rounded-lg"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Managed Services Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Hassle-Free IT Operations with Managed Services
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {managedServices.map((service, index) => (
+              <Card key={index} className="bg-card">
+                <CardHeader>
+                  <CardTitle>{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hardware Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-1">
+              <h2 className="text-3xl font-bold mb-6">
+                Empowering Your Workforce with Top-Tier Hardware
+              </h2>
+              <div className="space-y-8">
+                <div className="flex gap-4">
+                  <Monitor className="w-6 h-6 text-primary flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Powerful Processors</h3>
+                    <p className="text-muted-foreground">Our high-performance CPUs ensure optimal productivity and efficiency for your employees.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <Shield className="w-6 h-6 text-primary flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Stunning Visuals</h3>
+                    <p className="text-muted-foreground">Vibrant, high-resolution displays deliver an immersive experience for your team.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-1">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3_Empowering%20Your%20Workforce%20with%20Top-Tier%20Hardware-STwcTUj2NOTbKBf7NKGip8bIjpkySY.png"
+                alt="Modern workspace with top-tier hardware"
+                width={500}
+                height={400}
+                className="rounded-lg"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VoIP Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-1">
+              <h2 className="text-3xl font-bold mb-6">
+                Efficient Communication with VoIP Solutions
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Enhance team collaboration and reduce costs with our feature-rich VoIP solutions.
+              </p>
+              <Button size="lg">Get Started</Button>
+            </div>
+            <div className="flex-1">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4_Efficient%20Communication%20with%20VoIP%20Solutions-lMjsKrOtiIu4pfg8IJlF0lHj0ITMcV.png"
+                alt="VoIP communication system"
+                width={500}
+                height={400}
+                className="rounded-lg"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
